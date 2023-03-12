@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import { Flex, Center, Box, VStack, Text } from '@chakra-ui/react'
+import { AccountContextProvider } from './useAccount'
+import Account from "./Account"
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <Flex width="100vw" height="100vh" alignContent="center" justifyContent="center">
+    //   <Center>
+    //     Webmax Demo App
+    //   </Center>
+    // </Flex>
+    <AccountContextProvider>
+      <Flex width="100vw" height="100vh" alignContent="center" justifyContent="center">
+        <Center>
+          <VStack spacing={4} display="flex" flexDirection="column">
+            <Text>Webmax Demo App</Text>
+            <Account />
+          </VStack>
+        </Center>
+      </Flex>
+
+    </AccountContextProvider>
   );
 }
 
